@@ -154,6 +154,19 @@ footer{
   margin-top: 5px;
 }
 
+.nb{
+  width: 40px;
+  margin-right: 5px;
+  text-align: right;
+  border-radius:2px;
+  border:1px solid #ccc;
+}
+
+label {
+    font-family: calibri;
+    margin-right: 5px;
+}
+
 .bouton {
   font:bold 13px Arial;
   background:#f5f5f5;

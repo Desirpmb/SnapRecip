@@ -34,7 +34,7 @@ include_once('connexionBDD.php');
   while ($ligne = $resultat->fetch_assoc()) {
     echo  "<div class='recette'>
     <img class='illustration' src='Images/" . $ligne['urlImage']."' >
-    <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div><div id='ajout' ><input class='bouton' type='button' value='Ajouter au panier'></div></div>";
+    <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div><div id='ajout' ><label for='nb'>Quantité</label><input type='number' class='nb' value='0' min='0'><input class='bouton' type='button' value='Ajouter au panier'></div></div>";
   }
   echo "</div>";
   $mysqli->close();
@@ -44,3 +44,4 @@ include_once('connexionBDD.php');
   <a href="#"><input class="bouton" id="raccourci" type="button" value="Vers le haut"></a>
 </footer>
 </html>
+
