@@ -1,0 +1,171 @@
+html, body{
+  margin:0;
+  height: 100%;
+}
+
+
+#principale{
+  display:flex;
+  height: 100%;
+}
+
+.accueil-img{
+  text-align: center;
+  color: white;
+
+  font-family: 'Great Vibes', cursive;
+  width: 85%;
+  margin-left: 15%;
+  background-image: url(../Images/StockSnap_ISKQC7720V.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#logo {
+  width: 100%;
+}
+
+h1{
+  margin-top: 8%;
+  font-size: 75px;
+
+}
+
+h2{
+  margin-top: 42%;
+  font-size: 40px;
+  transform: translate(0%, 20%);
+}
+
+#entree{
+  border:solid 1px black;
+  border-width:20%;
+  text-align:center;
+}
+
+
+#boutons{
+  display: flex;
+  justify-content: center;
+  margin-left: 15%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.nav-bar{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 100%;
+  border-right:solid 1px black;
+}
+
+
+
+.element{
+   padding-top: 15px;
+   padding-bottom: 15px;
+   font-size: 160%;
+   font-family: 'Great Vibes', cursive;
+   text-align: center;
+   font-weight:bold;
+}
+
+
+.element, #logo{
+  border-bottom:1px solid black;
+}
+
+.element:hover{
+  background-color: black;
+  color: white;
+}
+
+.nav-bar > a{
+  text-decoration: none;
+  color: black;
+}
+
+
+.nav-bar > div {
+  padding: 10px 0 10px 0;
+}
+
+footer{
+  height: 75px;
+  margin-top: 15px;
+  background-color: #4682B4;
+  color: white;
+  font-family : calibri;
+  text-align: center;
+}
+
+#raccourci {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+#conteneur
+{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 15%;
+  justify-content: center;
+}
+
+.illustration {
+  width : 300px;
+  height : 200px;
+}
+
+.recette {
+  padding: 5px;
+  margin: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgrey;
+}
+
+.recette:hover{
+  border-color: grey;
+  filter: grayscale(20%);
+  -webkit-filter: grayscale(20%);
+  -moz-filter: grayscale(20%);
+}
+
+.description{
+  text-align: center;
+  font-family: calibri;
+  font-style: italic;
+  max-width: 300px;
+}
+
+.nom{
+  text-align: center;
+  font-family: calibri;
+  font-weight: bold;
+}
+
+#ajout{
+  text-align: right;
+  margin-top: 5px;
+}
+
+.bouton {
+  font:bold 13px Arial;
+  background:#f5f5f5;
+  color:#555;
+  border-radius:2px;
+  border:1px solid #ccc;
+  padding: 4px;
+}
+
+.bouton:hover {
+  background: lightblue;
+}
+
+#boutons > .bouton{
+  margin : 5px;
+  padding: 10px;
+}
