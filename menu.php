@@ -13,4 +13,10 @@
     }
     ?>
     <a href='home.php'><div class='element'>Accueil</div></a>
+    <?php
+    if (isset($_SESSION['email']))
+    {
+        echo "<a href='./panier.php'><div class='element'>Panier</div></a>";
+    }
+    ?>
 </nav>
