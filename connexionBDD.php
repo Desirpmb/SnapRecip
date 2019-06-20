@@ -2,7 +2,7 @@
 //données pour la connexion à la BdD
 $host = "localhost";
 $user="root";
-$password="Dez05377398091";
+$password="";
 $database = "SnapRecip";
 
 //connexion à la BdD
