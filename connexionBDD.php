@@ -12,4 +12,7 @@ if (mysqli_connect_errno($mysqli))
     echo "Echec lors de la connexion à Mysql : " . $mysqli_connect_error();
 }
 
+if (!$mysqli->set_charset("utf8")) {
+    echo "Erreur lors du chargement du jeu de caractères utf8 ";
+} 
 
