@@ -17,7 +17,7 @@ include_once('connexionBDD.php');
     </style>
  </head>
 <body>
-    <h1> Formulaire Plat </h1>
+    <h1> Formulaire Plats </h1>
 
     <form name="formPlat" action="" method="POST">
 
