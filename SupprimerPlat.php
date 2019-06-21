@@ -20,9 +20,7 @@ include_once('connexionBDD.php');
     </div>
   </div>
   <div id="boutons">
-    <input class="bouton" type="button" value="Ajouter un produit">
-    <input class="bouton" type="button" value="Modifier un produit">
-    <input class="bouton" type="button" value="Supprimer un produit">
+    <a href="home.php"><input class="bouton" type="button" value="Revenir en arrière"> </a>
   </div>
   <?php
     //recuperer données recettes
@@ -34,9 +32,13 @@ include_once('connexionBDD.php');
   while ($ligne = $resultat->fetch_assoc()) {
     echo  "<div class='recette'>
     <img class='illustration' src='Images/" . $ligne['urlImage']."' >
-    <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div><div id='ajout' ><label for='nb'>Quantité</label><input type='number' class='nb' value='0' min='0'><input class='bouton' type='button' value='Ajouter au panier'></div></div>";
+    <div class='nom'>" . $ligne['nomPlat'] ."</div>
+    <div class='description'>" . $ligne['description'] ."</div>
+    <div id='ajout' ><input class='bouton' type='submit' value='Supprimer le plat' ></div>
+    </div>";
   }
   echo "</div>";
+
   $mysqli->close();
   ?>
 </body>

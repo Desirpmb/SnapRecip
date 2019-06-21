@@ -22,9 +22,9 @@ include_once('connexionBDD.php');
   <div id="boutons">
     <input class="bouton" type="button" value="Ajouter un produit">
     <input class="bouton" type="button" value="Modifier un produit">
-    <input class="bouton" type="button" value="Supprimer un produit">
+    <a href="SupprimerPlat.php"> <input class="bouton" type="button" value="Supprimer un produit"> </a>
   </div>
-  <?php 
+  <?php
     //recuperer données recettes
   $sql = "SELECT * FROM Plat" ;
   $resultat = $mysqli->query($sql);
@@ -38,10 +38,9 @@ include_once('connexionBDD.php');
   }
   echo "</div>";
   $mysqli->close();
-  ?> 
+  ?>
 </body>
 <footer>
   <a href="#"><input class="bouton" id="raccourci" type="button" value="Vers le haut"></a>
 </footer>
 </html>
-
