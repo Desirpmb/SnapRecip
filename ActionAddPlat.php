@@ -1,8 +1,9 @@
 <?php
 $erreur = " ";
 $success = " ";
-include_once('connexionBDD.php');
-echo "OK";
+include_once 'connexionBDD.php';
+
+echo "$include </br>";
 
     //Récupérer les données
     $nomPlat = htmlspecialchars($_POST["nomPlat"]);
@@ -12,14 +13,12 @@ echo "OK";
     $prixUnitaire = $_POST["prixUnitaire"];
     $id = '\N'; /* auto-increment */
 
-echo $nomPlat;
+echo "<p> $nomPlat <p/>";
 
     //verification du nombre de caractère saisie
     if (!empty($_POST["nomPlat"] && $_POST["urlImage"] && $_POST["description"] && $_POST["quantiteDispo"] && $_POST["prixUnitaire"]))
     {
-
-        $success = "Success";
-
+          echo "Vérification empty ok <br/>";
           //verification du nombre de caractère saisie
           $nomPlatLength=strlen($nomPlat);
           if($nomPlatLength <=150)
@@ -29,17 +28,25 @@ echo $nomPlat;
               {
                   $descriptionLength=strlen($description);
                   if($descriptionLength<=250)
+
                   {
-                      $query = "INSERT INTO Plat(Id, nomPlat, urlImage, description, quantiteDispo, prixUnitaire)
+                      echo "<p> vérification longeur OK ! </p>" ;
+
+                      $sql = "INSERT INTO Plat(Id, nomPlat, urlImage, description, quantiteDispo, prixUnitaire)
                                         VALUES ('$id','$nomPlat','$urlImage','$description', '$quantiteDispo', '$prixUnitaire')";
-                      $result = mysqli_query($mysqli,$query);
+
+                      $result = mysqli_query($mysqli,$sql);
+
+                      echo "$r&esult</p>" ;
+
                       if (!$result)
                       {
                           echo "<p>Désolée, requête impossible ! </p>";
                       }
                       else
                       {
-                          $nomPlat = mysqli_fetch_assoc($result);
+                          echo"<p> requête OK ! </p>";
+
                           $success ='<p style="text-align:center; color:green"> Votre plat'.$nomPlat['nomPlat'].' a été bien ajouté !</p>';
                       }
                       $mysqli->close();
