@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <?php
 $erreur = " ";
 $success = " ";
@@ -110,28 +111,19 @@ if(isset($_POST['formPlat']))
 ?>
 
 >>>>>>> b5656df22dded275753abf9f1ccd28cd9774ed9b
+=======
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html>
  <head>
      <meta charset="UTF-8" />
      <meta name="author" content="Manuele" />
-    <title> Formulaire</title>
-    <style type="text/css">
-          label { display: inline-block;
-                     width : 200px;
-                     text-align : left;
-                     font-weight: bold;
-                     margin-left: 5px;
-                    }
-    </style>
- </head>
+    <title> Ajouter un plat</title>
+</head>
 <body>
     <h1> Formulaire Plat </h1>
-    <?php
-    if (isset($erreur)) { echo $erreur; }
-    if (isset($success)) { echo $success; }
-    ?>
-    <form name="formPlat" action="" method="POST">
+
+    <form name="formPlat" action="ActionAddPlat.php" method="POST">
 
                 <label>Nom</label>
                 <input type="text" id="nomPlat" name="nomPlat" placeholder="Saisissez le nom de votre plat" size="40" maxlength="150" />
