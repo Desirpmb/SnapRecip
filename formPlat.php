@@ -18,9 +18,6 @@
                 <input type="text" id="urlImage" name="urlImage" placeholder="Saisissez l'URL de votre image" size="40" maxlength="150" />
                 <br/>
 
-               <label>Description du plat </label>
-                <input type="text" name="descriptionPlat" size="20" maxlength="80"   />
-
                 <label>Description du plat </label>
                 <input type="text" id="description" name="description" placeholder="Saisissez la description de votre plat" size="40" maxlength="250" />
                 <br/>
