@@ -1,8 +1,8 @@
 <?php
 //données pour la connexion à la BdD
 $host = "localhost";
-$user="root";
-$password="";
+$user="php";
+$password="php";
 $database = "SnapRecip";
 
 //connexion à la BdD
@@ -14,5 +14,4 @@ if (mysqli_connect_errno($mysqli))
 
 if (!$mysqli->set_charset("utf8")) {
     echo "Erreur lors du chargement du jeu de caractères utf8 ";
-} 
-
+}
