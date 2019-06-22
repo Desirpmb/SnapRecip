@@ -63,7 +63,7 @@ if(isset($_POST['formInscription']))
                       }
                       else
                       {
-                          $erreur='<p style="text-align:center; color:red">Cette adresse mail est déjà existant, veuillez en choisir une autre !<p>';
+                          $erreur='<p style="text-align:center; color:red">Cette adresse mail est déjà existante, veuillez en choisir une autre !<p>';
                       }
                   }
                   else
