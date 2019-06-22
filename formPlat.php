@@ -18,7 +18,6 @@ if(isset($_POST['formPlat']))
           $nomPlatLength=strlen($nomPlat);
           if($nomPlatLength <=150)
           {
-          	echo "OK";
               $urlImageLength=strlen($urlImage);
               if($urlImageLength<=150)
               {
