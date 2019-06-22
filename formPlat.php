@@ -18,13 +18,14 @@ if(isset($_POST['formPlat']))
           $nomPlatLength=strlen($nomPlat);
           if($nomPlatLength <=150)
           {
+          	echo "OK";
               $urlImageLength=strlen($urlImage);
               if($urlImageLength<=150)
               {
                   $descriptionLength=strlen($description);
                   if($descriptionLength<=250)
                   {
-                      $query = "INSERT INTO Plat(Id, nomPlat, urlImage, description, quantiteDispo, prixUnitaire) VALUES ('$id','$nomPlat','$urlImage','$description', '$quantiteDispo', '$prixUnitaire')";
+                  	  $query = "INSERT INTO Plat(Id, nomPlat, urlImage, description, quantiteDispo, prixUnitaire) VALUES ('$id','$nomPlat','$urlImage','$description', '$quantiteDispo', '$prixUnitaire')";
                       $result = mysqli_query($mysqli,$query);
                       if (!$result)
                       {
