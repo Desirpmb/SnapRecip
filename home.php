@@ -8,7 +8,6 @@ include_once('connexionBDD.php');
   <meta charset="utf-8">
   <title>Snap Recip</title>
   <link rel="stylesheet" href="./css/style.css"/>
-  <link rel="stylesheet" href="css/recettes.css"/>
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -20,9 +19,9 @@ include_once('connexionBDD.php');
     </div>
   </div>
   <div id="boutons">
-    <input class="bouton" type="button" value="Ajouter un produit">
-    <input class="bouton" type="button" value="Modifier un produit">
-    <a href="SupprimerPlat.php"> <input class="bouton" type="button" value="Supprimer un produit"> </a>
+     <a href="formPlat.php"><input class="bouton" type="button" value="Ajouter un produit"></a>
+     <a href="modifierPlat.php"><input class="bouton" type="button" value="Modifier un produit"></a>
+    <a href="SupprimerPlat.php"><input class="bouton" type="button" value="Supprimer un produit"> </a>
   </div>
   <?php
     //recuperer données recettes
