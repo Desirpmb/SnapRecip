@@ -1,9 +1,9 @@
 body {
- font-family:"calibri",sans-serif;
+    font-family:"calibri",sans-serif;
+    background-image: url(../Images/fondAjout.jpg);
  }
 
  #principale{
-    background-image: url(Images/fondAjout.jpg);
  }
 
 form {
