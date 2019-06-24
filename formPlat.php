@@ -127,7 +127,7 @@ if(isset($_POST["formPlat"]))
                   <br/>
 
                   <label>Prix unitaire </label>
-                  <input type="number step="0.1" id="prixUnitaire" name="prixUnitaire" placeholder="Saisissez le prix unitaire de votre plat" size="40" maxlength="5" />
+                  <input type="number" step="0.1" id="prixUnitaire" name="prixUnitaire" placeholder="Saisissez le prix unitaire de votre plat" size="40" maxlength="5" />
                   <br/>
                   <input name="formPlat" type="submit" value="Ajouter votre plat" class="bouton" />
 
