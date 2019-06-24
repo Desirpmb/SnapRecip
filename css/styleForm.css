@@ -1,57 +1,81 @@
 body {
+    margin : 0;
+    padding: 0;
     font-family:"calibri",sans-serif;
     background-image: url(../Images/fondAjout.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+/*    -webkit-background-size: cover;*/
  }
 
- #principale{
- }
+.form-area{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: 620px;
+  box-sizing: border-box;
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+}
 
-form {
- padding:10px;
- width: 350px;
- }
+h1, p{
+  padding: 0 0 20px;
+  margin: 0;
+  color : #ffffff;
+  text-align: center;
+}
 
-fieldset {
- padding:0 20px 20px 20px;
- margin-bottom:10px;
- border:1px solid #DF3F3F;
- }
 
-legend {
- color:#DF3F3F;
- font-weight:bold
- }
+.form-area p{
+  margin : 0;
+  padding: 0;
+  color : #ffffff;
+  margin-bottom: 20px;
+}
 
-label {
- margin-top:10px;
- display:block;
- }
+.form-area input, select{
+  margin-bottom: 20px;
+  width: 100%;
+}
 
-label.inline {
- display:inline;
- margin-right:50px;
- }
-input, textarea, select, option {
- background-color:#FFF3F3;
- }
-input, textarea, select {
- padding:3px;
- border:1px solid #F5C5C5;
- border-radius:5px;
- width:200px;
- box-shadow:1px 1px 2px #C0C0C0 inset;
- }
-select {
- margin-top:10px;
- }
-input[type=radio] {
- background-color:transparent;
- border:none;
- width:10px;
- }
-input[type=submit], input[type=reset] {
- width:100px;
- margin-left:5px;
- box-shadow:1px 1px 1px #D83F3D;
- cursor:pointer;
- }
+
+.form-area input[type=text], .form-area input[type=number]{
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  background-color: transparent;
+  height: 40px;
+  color: #ffffff;
+}
+
+label{
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.form-area input[type=submit]{
+  border : none;
+  height: 40px;
+  color: #ffffff;
+  font-size: 15px;
+  background-color: tomato;
+  cursor: pointer;
+}
+
+.form-area input[type=submit]:hover{
+  background-color: lightgreen;
+}
+
+::placeholder{
+  color: lightgrey;
+}
+
+.btn {
+  background: rgba(0,0,0,0.6);
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 15px 17px; /* Some padding */
+  font-size: 20px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
