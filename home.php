@@ -21,7 +21,7 @@ include_once('connexionBDD.php');
   <div id="boutons">
      <a href="formPlat.php"><input class="bouton" type="button" value="Ajouter un produit"></a>
      <a href="modifPlat.php"><input class="bouton" type="button" value="Modifier un produit"></a>
-    <a href="SupprimerPlat.php"><input class="bouton" type="button" value="Supprimer un produit"> </a>
+    <a href="SupprimerPlat.php#boutons"><input class="bouton" type="button" value="Supprimer un produit"> </a>
   </div>
   <?php
     //recuperer données recettes
