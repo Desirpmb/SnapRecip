@@ -32,22 +32,17 @@ include_once('connexionBDD.php');
   while ($ligne = $resultat->fetch_assoc()) {
     echo  "<div class='recette'>
     <img class='illustration' src='Images/" . $ligne['urlImage']."' >
-
-    <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div><div class='info'>Prix unitaire : ". $ligne['prixUnitaire'] ." € <br/>Quantité disponible : ". $ligne['quantiteDispo'] ."</div><div id='ajout' ><label value='nb'>Quantité</label><input type='number' class='nb' value='0' min='0'><input class='bouton' type='button' value='Ajouter au panier'></div></div>";
-
-    // <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div>
-    // <div class='prix'>Prix unitaire : ". $ligne['prixUnitaire'] ." € </div>
-
-    // <form name='AjoutPanier' action='traitementAjoutPanier.php' method='POST'>
-    // <div id='ajout' >
-    // <label for='nb'>Quantité</label>
-    // <input name='Quantite' type='number' class='nb' value='0' min='0'>
-    // <input name='bouton' class='bouton' type='submit' value='Ajouter au panier'>
-    // <input type='hidden' name='ID' value='".$ligne['Id']."' />
-    // </form>
-
-    // </div>
-    // </div>";
+    <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div>
+    <div class='prix'>Prix unitaire : ". $ligne['prixUnitaire'] ." € </div>
+      <form name='AjoutPanier' action='traitementAjoutPanier.php' method='POST'>
+      <div id='ajout' >
+      <label for='nb'>Quantité</label>
+      <input name='Quantite' type='number' class='nb' value='0' min='0'>
+      <input name='bouton' class='bouton' type='submit' value='Ajouter au panier'>
+      <input type='hidden' name='ID' value='".$ligne['Id']."' />
+      </form>
+    </div>
+    </div>";
 
   }
   echo "</div>";
