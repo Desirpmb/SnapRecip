@@ -32,7 +32,7 @@ include_once('connexionBDD.php');
   while ($ligne = $resultat->fetch_assoc()) {
     echo  "<div class='recette'>
     <img class='illustration' src='Images/" . $ligne['urlImage']."' >
-    <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div><div class='prix'>Prix unitaire : ". $ligne['prixUnitaire'] ." € </div><div id='ajout' ><label for='nb'>Quantité</label><input type='number' class='nb' value='0' min='0'><input class='bouton' type='button' value='Ajouter au panier'></div></div>";
+    <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div><div class='info'>Prix unitaire : ". $ligne['prixUnitaire'] ." € <br/>Quantité disponible : ". $ligne['quantiteDispo'] ."</div><div id='ajout' ><label value='nb'>Quantité</label><input type='number' class='nb' value='0' min='0'><input class='bouton' type='button' value='Ajouter au panier'></div></div>";
   }
   echo "</div>";
   $mysqli->close();
@@ -42,5 +42,3 @@ include_once('connexionBDD.php');
   <a href="#"><input class="bouton" id="raccourci" type="button" value="Vers le haut"></a>
 </footer>
 </html>
-
-<!-- /div class='prix'>Prix unitaire : ". $ligne['prixUnitaire'] ." € -->
