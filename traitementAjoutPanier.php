@@ -1,11 +1,15 @@
 <?php
 session_start();
 include_once('connexionBDD.php');
-//$idPlatSupp=$_GET["varID"];
 //$query = "DELETE FROM Plat WHERE Id=$idPlatSupp";
 //$result = mysqli_query($mysqli,$query);
-header("Refresh: 0;url=SupprimerPlat.php");
-//recupérer ID, quantiteDIspo Plat
+
+//recupérer ID, quantite souhaitée du Plat
+$id = $_POST["ID"];
+$Quantite = $_POST["Quantite"];
+echo $id."<br/>";
+echo $Quantite."<br/>";
+
 //teste de quantite quantiteDIspo
 //inserer dans ligne commeande le Plat
 //soustrait la quantite que l'on souhaite ajouter à la quantiteDisponible
