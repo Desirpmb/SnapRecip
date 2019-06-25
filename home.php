@@ -32,7 +32,18 @@ include_once('connexionBDD.php');
   while ($ligne = $resultat->fetch_assoc()) {
     echo  "<div class='recette'>
     <img class='illustration' src='Images/" . $ligne['urlImage']."' >
-    <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div><div class='prix'>Prix unitaire : ". $ligne['prixUnitaire'] ." € </div><div id='ajout' ><label for='nb'>Quantité</label><input type='number' class='nb' value='0' min='0'><input class='bouton' type='button' value='Ajouter au panier'></div></div>";
+    <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div>
+    <div class='prix'>Prix unitaire : ". $ligne['prixUnitaire'] ." € </div>
+
+    <form name='AjoutPanier".$ligne['Id']."' action='traitementAjourPanier.php' method='POST'>
+    <div id='ajout' >
+    <label for='nb'>Quantité</label>
+    <input name='Quantité".$ligne['Id']."' type='number' class='nb' value='0' min='0'>
+    <input name='ID".$ligne['Id']."' class='bouton' type='submit' value='Ajouter au panier'>
+    </form>
+
+    </div>
+    </div>";
   }
   echo "</div>";
   $mysqli->close();
