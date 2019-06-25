@@ -22,8 +22,9 @@ include_once('connexionBDD.php');
   <div id="boutons">
     <a href="home.php"><input class="bouton" type="button" value="Revenir en arrière"> </a>
   </div>
+
   <?php
-    //recuperer données plats
+  //recuperer données plats
   $sql = "SELECT * FROM Plat" ;
   $resultat = $mysqli->query($sql);
 
@@ -36,49 +37,42 @@ include_once('connexionBDD.php');
     <img class='illustration' src='Images/" . $ligne['urlImage']."'>
     <div class='nom'>" . $ligne['nomPlat'] ."</div>
     <div class='description'>" . $ligne['description'] ."</div>
-    <div id='ajout' ><input name='".$ligne['Id']."'class='bouton' type='submit' value='Supprimer le plat ".$ligne['Id']."'></div>
+    <div id='ajout' ><input name='".$ligne['Id']."'class='bouton' type='submit' value='Supprimer le plat'></div>
     </div>";
     echo "</form>";
+
+  //Récupérer le numéro Id Max
     $id = $ligne['Id'];
   }
   echo "</div>";
 
-    //Création d'un tableau ID
+  //Executer la requete jusqu'à Id max
   for ($i=0; $i<=$id; $i++)
   {
     $sup = $i;
     //Si utilisateur clique sur bouton ID
     if (isset ($_POST[$sup]))
     {
-      echo $sup;
-      $query = "SELECT nomPlat FROM Plat WHERE Id=$sup";
+      $query = "SELECT * FROM Plat WHERE Id=$sup";
       $result = mysqli_query($mysqli,$query);
       if ($result)
       {
         while($ligne = $result->fetch_assoc())
         {
           $nomplat = $ligne ['nomPlat'];
+          $idd = $ligne ['Id'];
         }
-          echo "<div id='boutons'>";
-            echo "<form name='Confirmation' action='' method='POST'>";
-            echo "<p style='color:red'> Êtes-vous sûr de vouloir supprimer le plat : ".$nomplat." ? </p>
-                  <input name='Confirmation' type='submit' value='Confirmer' class='bouton'>";
-            echo "</form>";
-          echo "</div>";
-
-
-          if (isset($_POST["Confirmation"]))
-          {
-            echo "ok";
-            $query2 = "DELETE FROM Plat WHERE Id=$sup";
-            $result2 = mysqli_query($mysqli,$query2);
-            header("Refresh: 0;url=SupprimerPlat.php");
-          }
+          echo "<p id ='conteneur' style='color:red'> Êtes-vous sûr de vouloir supprimer le plat : ".$nomplat." ? </p>";
+          echo "<div id='boutons'>
+                <a href='traitementSup.php?varID=".$idd."'><input class='bouton' type='button' value='Confirmer'> </a>
+                <a href='home.php'><input class='bouton' type='button' value='Annuler'> </a>
+                </div>";
       }
     }
   }
 
   $mysqli->close();
+
   ?>
 </body>
 <footer>
