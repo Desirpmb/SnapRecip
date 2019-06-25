@@ -35,11 +35,12 @@ include_once('connexionBDD.php');
     <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div>
     <div class='prix'>Prix unitaire : ". $ligne['prixUnitaire'] ." € </div>
 
-    <form name='AjoutPanier".$ligne['Id']."' action='traitementAjourPanier.php' method='POST'>
+    <form name='AjoutPanier' action='traitementAjoutPanier.php' method='POST'>
     <div id='ajout' >
     <label for='nb'>Quantité</label>
-    <input name='Quantité".$ligne['Id']."' type='number' class='nb' value='0' min='0'>
-    <input name='ID".$ligne['Id']."' class='bouton' type='submit' value='Ajouter au panier'>
+    <input name='Quantite' type='number' class='nb' value='0' min='0'>
+    <input name='bouton' class='bouton' type='submit' value='Ajouter au panier'>
+    <input type='hidden' name='ID' value='".$ligne['Id']."' />
     </form>
 
     </div>
