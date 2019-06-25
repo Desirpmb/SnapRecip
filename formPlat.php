@@ -32,12 +32,12 @@ if(isset($_POST["formPlat"]))
                               if($prixUnitaire>0){
                                   if($quantiteDispo>0){
 
-                                      $query = "INSERT INTO plat(nomPlat, urlImage, description, quantiteDispo, prixUnitaire)
+                                      $query = "INSERT INTO Plat(nomPlat, urlImage, description, quantiteDispo, prixUnitaire)
                                                         VALUES ('$nomPlat','$urlImage','$description', '$quantiteDispo', '$prixUnitaire');";
                                       $result = mysqli_query($mysqli,$query);
                                       if ($result)
                                       {
-                                        $query="SELECT * FROM plat where nomPlat='$nomPlat';";
+                                        $query="SELECT * FROM Plat where nomPlat='$nomPlat';";
                                         $result=mysqli_query($mysqli,$query);
                                         if($result)
                                         {
