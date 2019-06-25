@@ -20,14 +20,13 @@ include_once('connexionBDD.php');
   </div>
   <div id="boutons">
      <a href="formPlat.php"><input class="bouton" type="button" value="Ajouter un produit"></a>
-     <a href="modifierPlat.php"><input class="bouton" type="button" value="Modifier un produit"></a>
+     <a href="modifPlat.php"><input class="bouton" type="button" value="Modifier un produit"></a>
     <a href="SupprimerPlat.php"><input class="bouton" type="button" value="Supprimer un produit"> </a>
   </div>
   <?php
     //recuperer données recettes
   $sql = "SELECT * FROM Plat" ;
   $resultat = $mysqli->query($sql);
-
 
   echo "<div id='conteneur'>";
   while ($ligne = $resultat->fetch_assoc()) {

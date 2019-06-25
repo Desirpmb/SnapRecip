@@ -43,52 +43,50 @@ if(isset($_POST["formPlat"]))
                                         {
                                           while($NomPlat = mysqli_fetch_assoc($result))
                                           {
-                                              $success='<p style="text-align:center; color:lightgreen"> '.$NomPlat['nomPlat'].' a été ajouté !</p>';
-                                              sleep(2);
-                                              header("Location: home.php");
+                                              $success='<p style="text-align:center; color:white"> '.$NomPlat['nomPlat'].'a été ajouté !</p>';
                                           }
                                         }
 
                                       }
                                       else
                                       {
-                                          $echec ='<p style="text-align:center; color:orange">Votre plat n\'a pas pu être ajouté à la liste de plat disponible, veuillez rééssayer !</p>';
+                                          $echec ='<p style="text-align:center; color:white">Votre plat n\'a pas pu être ajouté à la liste de plat disponible, veuillez rééssayer !</p>';
                                       }
                                       $mysqli->close();
                                   }else{
-                                    $erreur ='<p style="text-align:center; color:orange"> Veuillez entrer un nombre positif dans le champs quantité disponible!';
+                                    $erreur ='<p style="text-align:center; color:white"> Veuillez entrer un nombre positif dans le champs quantité disponible!';
                                   }
                                 }else{
-                                  $erreur ='<p style="text-align:center; color:orange"> Veuillez entrer un nombre positif dans le champs prix unitaire!';
+                                  $erreur ='<p style="text-align:center; color:white"> Veuillez entrer un nombre positif dans le champs prix unitaire!';
                                 }
                             }else{
-                              $erreur ='<p style="text-align:center; color:orange"> Veuillez entrer un nombre avec 5 chiffres dans le champs prix unitaire!';
+                              $erreur ='<p style="text-align:center; color:white"> Veuillez entrer un nombre avec 5 chiffres dans le champs prix unitaire!';
                             }
 
                           }else{
-                            $erreur ='<p style="text-align:center; color:orange"> Veuillez entrer un nombre avec 5 chiffres !';
+                            $erreur ='<p style="text-align:center; color:white"> Veuillez entrer un nombre avec 5 chiffres !';
                           }
                     }
                     else
                     {
-                        $erreur='<p style="text-align:center; color:orange">Votre description dépasse 250 caractères!<p>';
+                        $erreur='<p style="text-align:center; color:white">Votre description dépasse 250 caractères!<p>';
                     }
 
                 }
                 else
                 {
-                    $erreur='<p style="text-align:center; color:orange">Votre urlImage dépasse 150 caractères!<p>';
+                    $erreur='<p style="text-align:center; color:white">Votre urlImage dépasse 150 caractères!<p>';
                 }
 
             }
             else
             {
-                $erreur='<p style="text-align:center; color:orange">Veuillez saisir un nom de plat ayant moins de 150 caractères !<p>';
+                $erreur='<p style="text-align:center; color:white">Veuillez saisir un nom de plat ayant moins de 150 caractères !<p>';
             }
       }
       else
       {
-           $erreur='<p style="text-align:center; color:orange">L\'un des champs n\'a pas été complété !<p>';
+           $erreur='<p style="text-align:center; color:white">L\'un des champs n\'a pas été complété !<p>';
       }
 }
 
@@ -100,12 +98,12 @@ if(isset($_POST["formPlat"]))
      <meta name="author" content="Manuele" />
      <link rel="stylesheet" href="./css/styleForm.css"/>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title> Ajouter un plat</title>
+    <title> Modifier un plat</title>
 </head>
 <body>
    <a href="./home.php"><button class="btn"><i class="fa fa-home"></i></button></a>
    <div class="form-area">
-      <h1> Ajout un plat </h1>
+      <h1> Modifier un plat </h1>
       <?php
       if (($erreur == " ") && ($success == " ")) { echo "<p id='test'>Veuillez compléter les champs demandés</p>";}
       if (isset($erreur)) { echo $erreur; }
@@ -132,7 +130,7 @@ if(isset($_POST["formPlat"]))
                   <input type="number" step="0.1" id="prixUnitaire" name="prixUnitaire" placeholder="Saisissez le prix unitaire de votre plat" size="40" maxlength="5" />
                   <br/>
 
-                  <input name="formPlat" type="submit" value="Ajouter votre plat" class="bouton" />
+                  <input name="formPlat" type="submit" value="Modifier le plat sélectionné" class="bouton" />
       </form>
     </div>
 </body>
