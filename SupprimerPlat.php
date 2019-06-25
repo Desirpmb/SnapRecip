@@ -62,7 +62,6 @@ include_once('connexionBDD.php');
           $nomplat = $ligne ['nomPlat'];
           $idd = $ligne ['Id'];
         }
-echo $idd;
           echo "<p id ='conteneur' style='color:red'> Êtes-vous sûr de vouloir supprimer le plat : ".$nomplat." ? </p>";
           echo "<div id='boutons'>
                 <a href='traitementSup.php?varID=".$idd."'><input class='bouton' type='button' value='Confirmer'> </a>
