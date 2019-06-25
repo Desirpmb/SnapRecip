@@ -31,7 +31,7 @@ include_once('connexionBDD.php');
   echo "<div id='conteneur'>";
   while ($ligne = $resultat->fetch_assoc())
   {
-    echo "<form name='formSup".$ligne['Id']."' action='' method='POST'>";
+    echo "<form name='formSup".$ligne['Id']."' action='SupprimerPlat.php#message' method='POST'>";
     echo
     "<div class='recette'>
     <img class='illustration' src='Images/" . $ligne['urlImage']."'>
@@ -62,7 +62,7 @@ include_once('connexionBDD.php');
           $nomplat = $ligne ['nomPlat'];
           $idd = $ligne ['Id'];
         }
-          echo "<p id ='conteneur' style='color:red'> Êtes-vous sûr de vouloir supprimer le plat : ".$nomplat." ? </p>";
+          echo "<p class='message' id ='message' style='color:red'> Êtes-vous sûr de vouloir supprimer le plat : ".$nomplat." ? </p>";
           echo "<div id='boutons'>
                 <a href='traitementSup.php?varID=".$idd."'><input class='bouton' type='button' value='Confirmer'> </a>
                 <a href='home.php'><input class='bouton' type='button' value='Annuler'> </a>

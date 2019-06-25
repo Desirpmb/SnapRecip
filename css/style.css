@@ -115,7 +115,13 @@ footer{
   margin-left: 15%;
   justify-content: center;
 }
-
+.message
+{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 15%;
+  justify-content: center;
+}
 .illustration {
   width : 300px;
   height : 200px;
