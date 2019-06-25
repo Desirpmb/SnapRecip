@@ -143,6 +143,13 @@ footer{
   max-width: 300px;
 }
 
+.prix{
+  text-align: center;
+  font-family: calibri;
+  padding: 3px 0 3px 0;
+  max-width: 300px;
+}
+
 .nom{
   text-align: center;
   font-family: calibri;
