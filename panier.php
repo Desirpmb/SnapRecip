@@ -8,6 +8,6 @@ include_once('connexionBDD.php');
 	<title>Panier</title>
 </head>
 <body>
-
+<h1> Page à finaliser... </h1>
 </body>
 </html>
