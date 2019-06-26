@@ -7,7 +7,7 @@ $query = "SELECT * FROM Plat WHERE Id='$varId'";
 $resultat = mysqli_query($mysqli,$query);
 $ligne = $resultat->fetch_assoc();
 
-if (isset($_POST["nomPlat"]) && isset($_POST["urlImage"]) && isset($_POST["description"]) && isset($_POST["quantiteDispo"]) && isset($_POST["prixUnitaire"])){
+if (isset($_POST["formPlat"])){
   if (!empty($_POST["nomPlat"] && $_POST["urlImage"] && $_POST["description"] && $_POST["quantiteDispo"] && $_POST["prixUnitaire"]))
   {
    if ($_POST["nomPlat"]!=$ligne['nomPlat'] || $_POST["urlImage"]!=$ligne['urlImage'] || $_POST["description"]!=$ligne['description'] || $_POST["quantiteDispo"]!=$ligne['quantiteDispo'] || $_POST["prixUnitaire"]!=$ligne['prixUnitaire'])

@@ -33,7 +33,8 @@ include_once('connexionBDD.php');
     echo  "<div class='recette'>
     <img class='illustration' src='Images/" . $ligne['urlImage']."' >
     <div class='nom'>" . $ligne['nomPlat'] ."</div><div class='description'>" . $ligne['description'] ."</div>
-    <div class='prix'>Prix unitaire : ". $ligne['prixUnitaire'] ." € </div>
+    <div class='info'>Quantité disponible : ". $ligne['quantiteDispo'] ."</div>
+    <div class='info'>Prix unitaire : ". $ligne['prixUnitaire'] ." € </div>
       <form name='AjoutPanier' action='traitementAjoutPanier.php' method='POST'>
       <div id='ajout' >
       <label for='nb'>Quantité</label>
