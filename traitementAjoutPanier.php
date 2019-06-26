@@ -82,12 +82,12 @@ if(isset($_SESSION['email']))
               while($qtLPtable = mysqli_fetch_assoc($resultLP))
               {
                 $qtLP = $qtLPtable['quantite'];
-                echo $qtLP."<br/>";
-                echo $qtDemande."<br/>";
+                echo "Quantité du produit :".$nomPlat." = ".$qtLP."<br/>";
+                echo "Nouvelle quantité du produit demandée :".$nomPlat." = ".$qtDemande."<br/>";
 
               }
               $newQtLP = $qtDemande + $qtLP;
-              echo $newQtLP."<br/>";
+              echo "MAJ quantité de votre produit : ".$nomPlat." = ".$newQtLP."<br/>";
               $qtLPupdate = "UPDATE LignePanier SET quantite = '$newQtLP' WHERE Panier_id='$numPanier' AND Plat_id='$id'";
               $resultatQTLPupdate = mysqli_query($mysqli,$qtLPupdate);
               echo "MAJ de votre panier :".$nomPlat." réussi ! <br/>";
@@ -111,7 +111,10 @@ if(isset($_SESSION['email']))
             while($numQtDis = mysqli_fetch_assoc($resultNewQtDis))
             {
               $afficheNewQtDis = $numQtDis['quantiteDispo'];
-              echo "Nouvelle qt de :".$nomPlat." = ".$afficheNewQtDis."<br/>";
+              echo "Nouvelle quantité de stock disponible :".$nomPlat." = ".$afficheNewQtDis."<br/><br/>";
+              echo "---------------------------------------------------------------------------------<br/>";
+              echo "Panier : <br/>";
+              echo "---------------------------------------------------------------------------------<br/><br/>";
             }
 
             //Récupérer prix unitaire de chaque plat dans le panier et sommer
@@ -126,19 +129,20 @@ if(isset($_SESSION['email']))
               $affichePrix = $PrixUniTable['prixUnitaire'];
               $afficheNomPlat = $PrixUniTable['nomPlat'];
               $afficherQt = $PrixUniTable['quantite'];
-              echo "PU :".$afficheNomPlat." = ".$affichePrix." Qantité : ".$afficherQt."<br/>";
+              echo $afficheNomPlat." : <br/> ".$affichePrix." € Qantité : ".$afficherQt."<br/><br/>";
               //Calculer le prix PrixTotal
               $mttotalProduit = $afficherQt*$affichePrix;
               $total = $total + $mttotalProduit;
             }
-              echo $total."<br/>";
+              echo "---------------------------------------------------------------------------------<br/><br/>";
+              echo "Montant total de votre panier = ".$total." €<br/>";
 
             //insérer le prix total dans le Panier
             $queryInsertPT = "UPDATE Panier SET prixTotal = '$total' WHERE Id = '$numPanier'";
             $resultInsertPT = mysqli_query($mysqli,$queryInsertPT);
             echo "réussi ! <br/>";
 
-            //Supprimer 
+            //Supprimer
             //inserer ligne commande dans le Panier
             //presentation du panier sous forme de tableau
 
