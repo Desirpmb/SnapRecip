@@ -105,7 +105,7 @@ if(isset($_POST['formPlat'])){
 <body>
 	<a href="./home.php"><button class="btn"><i class="fa fa-home"></i></button></a>
 	<div class="form-area">
-		<h1> Ajout un plat </h1>
+		<h1> Ajouter un plat </h1>
 		<?php
 		if (($erreur == " ") && ($success == " ")) { echo "<p id='test'>Veuillez compléter les champs demandés</p>";}
 		if (isset($erreur)) { echo $erreur; }
